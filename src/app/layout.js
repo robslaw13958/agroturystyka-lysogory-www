@@ -3,6 +3,7 @@ import "./globals.css";
 import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
