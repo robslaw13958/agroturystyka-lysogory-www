@@ -3,17 +3,21 @@ import styles from "./page.module.css";
 
 export default function Home() {
   return (
-      <main className={styles.page}>
-          <p>Udogodnienia dla gości</p>
-        <ol>
-            <li>przeszklona weranda</li>
-            <li>sala z kominkiem</li>
-            <li>klimatyzacja</li>
-            <li>akceptujemy zwierzęta domowe 🐶</li>
-            <li>bezpłatny parking 🅿️</li>
-            <li>darmowe wifi</li>
-            <li>udogodnienia dla osób niepełnosprawnych♿️</li>
-        </ol>
-      </main>
+    <main className={styles.page}>
+      <h2>Witamy w Agroturystyce Łysogóry!</h2>
+      <p>Szukasz miejsca, gdzie czas płynie wolniej, a śpiew ptaków budzi Cię rano? Nasz dom położony tuż przy lesie (dosłownie 10 metrów!) to idealna przystań dla rodzin z dziećmi, grup przyjaciół i wszystkich spragnionych odpoczynku z dala od miejskiego zgiełku. Oferujemy komfortowe apartamenty, mnóstwo atrakcji i domową atmosferę, w której poczujesz się naprawdę swobodnie.</p>
+      <h2>Co nas wyróżnia?</h2>
+      <ul>
+        <li>🌳 Spokój i bliskość natury</li>
+        <li>👨‍👩‍👧‍👦 Idealne miejsce dla rodzin</li>
+        <li>🔥 Miejsce na ognisko</li>
+        <li>🏡 Przeszklona weranda na każdą pogodę</li>
+        <li>🛌 Komfortowe apartamenty</li>
+        <li>🐶 Przyjaźń dla zwierząt</li>
+        <li>🌟 Recepcja czynna całą dobę</li>
+        <li>🅿️ Bezpłatny parking</li>
+      </ul>
+
+    </main>
   );
 }
