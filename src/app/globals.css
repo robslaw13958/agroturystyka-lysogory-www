@@ -1,15 +1,15 @@
 :root {
   --background: #dad7cd;
-  --foreground: #1B2922;
-  --dark-leading-color: #344E41;
+  --foreground: #181b1a;
+  --dark-leading-color: #2e3833;
   --light-leading-color: #588157;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1B2922;
+    --background: #181b1a;
     --foreground: #dad7cd;
-    --dark-leading-color: #344E41;
+    --dark-leading-color: #2e3833;
     --light-leading-color: #588157;
   }
 }
@@ -30,7 +30,8 @@ body {
   height: 100%;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-cormorant), sans-serif;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -48,49 +49,75 @@ a {
 }
 
 header {
-  background: var(--dark-leading-color);
+  /* background: var(--dark-leading-color); */
+  background-image: url('/drone/IMG-20250620-WA0026.jpg');
+  background-size: cover;
+  background-position: 50% 30% ;
   color: #dad7cd;
   display: flex;
   flex-shrink: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 160px;
-  gap: 20px;
+  min-height: 200px;
+  gap: 10px;
   padding: 20px;
+  text-shadow: #181b1a 0px 0px 10px;
+}
+
+header h1 {
+  backdrop-filter: blur(10px);
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 nav ul {
   display: flex;
   padding: 0;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  overflow: hidden;
 }
 nav ul li {
   list-style: none;
   font-weight: bold;
+  font-size: 1.2rem;
+  width: 100%;
+  white-space: nowrap;
 }
 nav ul li a {
   display:block;
+  width: 100%;
   cursor: pointer;
   padding: 10px 20px;
-  backdrop-filter: blur(10px);
+  text-align: center;
+
 }
 
 nav ul li a:hover {
-  background-color: var(--light-leading-color);
   border-radius: 5px;
-  color: #1B2922;
-
+  text-shadow: #181b1a 0px 0px 5px;
 }
 
 footer {
   background: var(--dark-leading-color);
   color: #dad7cd;
+  width: 100%;
   display: flex;
   flex-shrink: 0;
-  padding: 16px;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
   min-height: 220px;
+}
+
+footer > div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+  justify-content: space-between;
+  max-width: 1200px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -106,10 +133,14 @@ footer {
     padding: 10px;
   }
 
-  footer {
+  footer > div {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+
+  nav {
+    width: 40%;
   }
 
   nav ul {
