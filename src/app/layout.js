@@ -4,6 +4,7 @@ import styles from "@/app/page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import Navigation from "./components/Navigation";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -26,20 +27,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body className={`${cormorant.variable} ${alegreya.variable}`}>
-        <header>
-          <h1>Agroturystyka Łysogóry</h1>
-          <nav>
-            <ul>
-              <li><Link href="/">Strona główna</Link></li>
-              <li><Link href="/o_nas">O nas</Link></li>
-              <li><Link href="/noclegi">Noclegi</Link></li>
-              <li><Link href="/atrakcje">Atrakcje</Link></li>
-              <li><Link href="/galeria">Galeria</Link></li>
-            </ul>
-          </nav>
-        </header>
+        <Navigation />
         {children}
         <footer>
           <div className={styles.footerContent}>
