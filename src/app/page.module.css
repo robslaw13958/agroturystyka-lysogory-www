@@ -21,6 +21,112 @@
   gap: 32px;
 }
 
+.page > p {
+  text-align: justify;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%; /* zmiana z 400px na 100% żeby wypełnić nową szerokość */
+  height: 400px; /* możemy zwiększyć wysokość dla lepszych proporcji */
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.photosGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.photoCard {
+  background: white;
+  padding: 16px 16px 24px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.photoCard:hover {
+  transform: translateY(-4px);
+}
+
+.photoCard .imageContainer {
+  width: 100%;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.photoCard p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.photoSection {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* zmiana z 1fr 1fr na 3fr 2fr dla proporcji 60:40 */
+  gap: 32px;
+  width: 100%;
+  margin: 0 0 40px 0;
+}
+
+.photoSection:nth-child(even) {
+  direction: rtl;
+}
+
+.photoContent {
+  direction: ltr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.photoContent h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.photoContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+.featuresList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.featureCard {
+  background: var(--gray-alpha-100);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  background: var(--gray-alpha-200);
+}
+
+.featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -29,6 +135,22 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+  }
+
+  .logo {
+    filter: invert();
+  }
+
+  .photoCard {
+    background: #1a1a1a;
+  }
+  
+  .photoCard p {
+    color: #999;
+  }
+
+  .photoContent p {
+    color: #999;
   }
 }
 /* Enable hover only on non-touch devices */
@@ -84,8 +206,21 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 768px) {
+  .photoSection {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .imageContainer {
+    height: 300px;
+  }
+  
+  .photoSection:nth-child(even) {
+    direction: ltr;
+  }
+
+  .featuresList {
+    grid-template-columns: 1fr;
   }
 }
